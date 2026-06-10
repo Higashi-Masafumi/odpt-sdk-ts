@@ -1,0 +1,76 @@
+{
+  "name": "odpt-sdk",
+  "version": "0.1.0",
+  "description": "Typed TypeScript SDK for the ODPT (Public Transportation Open Data Center) REST API v4 — railway, bus and aviation open data for Japan.",
+  "keywords": [
+    "odpt",
+    "public-transportation",
+    "open-data",
+    "japan",
+    "railway",
+    "bus",
+    "transit",
+    "gtfs",
+    "tokyo",
+    "sdk"
+  ],
+  "license": "MIT",
+  "author": "Masafumi Higashi <m.higashi@neoai.jp>",
+  "homepage": "https://github.com/higashi-masafumi/odpt-sdk-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/higashi-masafumi/odpt-sdk-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/higashi-masafumi/odpt-sdk-ts/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run --project unit",
+    "test:watch": "vitest --project unit",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:all": "vitest run",
+    "test:coverage": "vitest run --project unit --coverage",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/node": "^22.7.4",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "@vitest/coverage-v8": "^2.1.2",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.2"
+  }
+}
